@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import {FiSearch} from 'react-icons/fi'
-import './App.css'
+import "./style.css"
 
 function App() {
   const [count, setCount] = useState(0)
