@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-        <h1>buscador</h1>
+        <h1>Buscador</h1>
     </>
   )
 }
