@@ -6,7 +6,11 @@ function App() {
   const [input, setInput] = useState("")
 
     function handleSearch(){
-        alert("Valor do input: " + input)
+        // 01001000/json/
+        if(input === ""){
+          alert("Digite um CEP")
+          return
+        }
     }
 
   return (
