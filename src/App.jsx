@@ -6,6 +6,7 @@ import api from './services/api'
 
 function App() {
   const [input, setInput] = useState("")
+  const [cep, setCep] = useState()
 
     async function handleSearch(){
         // 01001000/json/
@@ -15,10 +16,11 @@ function App() {
         }
         try{
             const response = await api.get(`${input}/json`)
-            console.log(response.data)
+           setCep(response.data)
+           setInput("")
         }
         catch{
-          alert("Erro ao buscar")
+          alert("Este cep")
           setInput("")
         }
     }
@@ -39,14 +41,17 @@ function App() {
                 <FiSearch size={25} color='#fff'/>
             </button>
         </div>
-        <main className="main">
-          <h2>CEP: 7900088</h2>
+          {/* Verificamos se o objeto cep possui chaves (ou seja, se não está vazio) */}
+        {Object.keys(cep || {}).length > 0 && (
+          <main className="main">
+              <h2>CEP: {cep.cep}</h2>
 
-          <span>Rua teste</span>
-          <span>Complemento: Algum complemento</span>
-          <span>Vila Rosa</span>
-          <span>Campo Grande - MS</span>
-        </main>
+              <span>Logradouro: {cep.logradouro}</span>
+              <span>Bairro: {cep.bairro}</span>
+              <span>Localidade: {cep.localidade} - {cep.uf}</span>
+              <span>Região: {cep.regiao}</span>
+          </main>
+        )}
     </div>
   )
 }
