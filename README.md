@@ -1,4 +1,4 @@
-Buscador de CEP - React + Vite
+🔍 Buscador de CEP - React + Vite
 Aplicação moderna desenvolvida em React para consulta de endereços brasileiros de forma simplificada, utilizando a API ViaCEP.
 
 💻 Sobre o Projeto
