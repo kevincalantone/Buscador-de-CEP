@@ -20,11 +20,10 @@ function App() {
            setInput("")
         }
         catch{
-          alert("Este cep")
+          alert("Este cep não existe")
           setInput("")
         }
     }
-
   return (
     <div className='container'>
         <h1 className='title'>Buscador CEP</h1>
@@ -36,12 +35,10 @@ function App() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             />
-
             <button className='buttonSearch' onClick={handleSearch}>
                 <FiSearch size={25} color='#fff'/>
             </button>
         </div>
-          {/* Verificamos se o objeto cep possui chaves (ou seja, se não está vazio) */}
         {Object.keys(cep || {}).length > 0 && (
           <main className="main">
               <h2>CEP: {cep.cep}</h2>
